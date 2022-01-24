@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ForumProject.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20220123193105_IdendityDBUser")]
+    [Migration("20220123202359_IdendityDBUser")]
     partial class IdendityDBUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
