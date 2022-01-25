@@ -22,6 +22,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.ForumProject">
     <configuration name="ForumProject" type="LaunchSettings" factoryName=".NET Launch Settings Profile">

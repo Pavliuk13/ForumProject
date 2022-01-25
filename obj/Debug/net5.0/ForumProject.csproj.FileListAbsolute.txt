@@ -77,3 +77,6 @@ E:\prog works\forum_proj\ForumProject\bin\Debug\net5.0\Microsoft.Extensions.Iden
 E:\prog works\forum_proj\ForumProject\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
 E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\User\Create.cshtml.g.cs
+E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\User\Edit.cshtml.g.cs
+E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\User\Index.cshtml.g.cs
