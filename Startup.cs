@@ -28,7 +28,7 @@ namespace ForumProject
         {
             string connectionString = Configuration.GetConnectionString("default");
             services.AddDbContext<AppDBContext>(c => c.UseSqlServer(connectionString));
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDBContext>();
+            services.AddIdentity<IdentityUser, IdentityRole>(opt => opt.User.RequireUniqueEmail = true).AddEntityFrameworkStores<AppDBContext>();
             services.AddControllersWithViews();
         }
 

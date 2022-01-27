@@ -80,3 +80,7 @@ E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Account\Login
 E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\User\Create.cshtml.g.cs
 E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\User\Edit.cshtml.g.cs
 E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\User\Index.cshtml.g.cs
+E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Roles\Create.cshtml.g.cs
+E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Roles\Edit.cshtml.g.cs
+E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Roles\Index.cshtml.g.cs
+E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Roles\UsersList.cshtml.g.cs
