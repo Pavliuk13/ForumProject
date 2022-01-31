@@ -13,9 +13,7 @@ namespace ForumProject.Models.AppDBContext
             _options = options;
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-        }
+        public DbSet<IdentityUser> IdentityUsers { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

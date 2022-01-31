@@ -2,7 +2,7 @@
 @model ForumProject.ViewModels.ChangeRoleViewModel
  
 <h2>Change role for user @Model.UserEmail</h2>
- 
+
 <form asp-action="Edit" method="post">
     <input type="hidden" name="userId" value="@Model.UserId" />
     <div class="form-group">
