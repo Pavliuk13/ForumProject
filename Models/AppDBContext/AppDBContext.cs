@@ -15,5 +15,6 @@ namespace ForumProject.Models.AppDBContext
 
         public DbSet<IdentityUser> IdentityUsers { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Post> Posts { get; set; }
     }
 }

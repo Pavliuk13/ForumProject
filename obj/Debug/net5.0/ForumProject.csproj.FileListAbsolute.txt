@@ -88,3 +88,5 @@ E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Category\Inde
 E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Category\Create.cshtml.g.cs
 E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Category\Edit.cshtml.g.cs
 E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Category\Delete.cshtml.g.cs
+E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Post\Index.cshtml.g.cs
+E:\prog works\forum_proj\ForumProject\obj\Debug\net5.0\Razor\Views\Post\Upsert.cshtml.g.cs
