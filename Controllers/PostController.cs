@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using ForumProject.Models.AppDBContext;
+using ForumProject.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -29,26 +28,37 @@ namespace ForumProject.Controllers
         [HttpGet]
         public IActionResult Upsert(int? id)
         {
-            IEnumerable<SelectListItem> listItems = _db.Categories.Select(item => new SelectListItem()
+            // IEnumerable<SelectListItem> listItems = _db.Categories.Select(item => new SelectListItem()
+            // {
+            //     Text = item.Name,
+            //     Value = item.Id.ToString()
+            // });
+            //
+            // ViewBag.listItems = listItems;
+            //
+            // Post post = new Post();
+
+            PostVM postVm = new PostVM()
             {
-                Text = item.Name,
-                Value = item.Id.ToString()
-            });
-
-            ViewBag.listItems = listItems;
-
-            Post post = new Post();
+                Post = new Post(),
+                CategorySelectList = _db.Categories.Select(item => new SelectListItem()
+                {
+                    Text = item.Name,
+                    Value = item.Id.ToString()
+                })
+            };
+            
             if (id == null)
             {
                 //create post
-                return View(post);
+                return View(postVm);
             }
 
-            post = _db.Posts.Find(id);
-            if (post == null)
+            postVm.Post = _db.Posts.Find(id);
+            if (postVm.Post == null)
                 return NotFound();
 
-            return View(post);
+            return View(postVm);
         }
 
         [HttpPost]
