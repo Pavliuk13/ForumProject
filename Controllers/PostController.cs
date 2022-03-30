@@ -128,7 +128,48 @@ namespace ForumProject.Controllers
 
                 return RedirectToAction("Index");
             }
-            return View();
+
+            postVm.CategorySelectList = _db.Categories.Select(item => new SelectListItem()
+            {
+                Text = item.Name,
+                Value = item.Id.ToString()
+            });
+            
+            return View(postVm);
+        }
+        
+        [HttpGet]
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+                return NotFound();
+            
+            var obj = _db.Posts.Find(id);
+            if (obj == null)
+                return NotFound();
+
+            obj.Category = _db.Categories.FirstOrDefault(el => el.Id == obj.CategoryId);
+
+            return View(obj);
+        }
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeletePost(int? id)
+        {
+            var objFromDb = _db.Posts.Find(id);
+            string path = _environment.WebRootPath + WebConst.ImagePath;
+
+            var oldFile = Path.Combine(path, objFromDb.Image);
+            if (System.IO.File.Exists(oldFile))
+            {
+                System.IO.File.Delete(oldFile);
+            }
+
+            _db.Posts.Remove(objFromDb);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }

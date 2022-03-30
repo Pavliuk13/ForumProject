@@ -181,3 +181,4 @@ D:\Programming\ForumProject\obj\Debug\net5.0\ref\ForumProject.dll
 D:\Programming\ForumProject\obj\Debug\net5.0\ForumProject.pdb
 D:\Programming\ForumProject\obj\Debug\net5.0\ForumProject.genruntimeconfig.cache
 D:\Programming\ForumProject\obj\Debug\net5.0\refint\ForumProject.dll
+D:\Programming\ForumProject\obj\Debug\net5.0\Razor\Views\Post\Delete.cshtml.g.cs
