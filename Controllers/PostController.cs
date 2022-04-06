@@ -26,25 +26,12 @@ namespace ForumProject.Controllers
         public IActionResult Index()
         {
             IEnumerable<Post> posts = _db.Posts.Include(el => el.Category);
-            // foreach (var obj in posts)
-            //     obj.Category = _db.Categories.FirstOrDefault(el => el.Id == obj.CategoryId);
-            //
             return View(posts);
         }
 
         [HttpGet]
         public IActionResult Upsert(int? id)
         {
-            // IEnumerable<SelectListItem> listItems = _db.Categories.Select(item => new SelectListItem()
-            // {
-            //     Text = item.Name,
-            //     Value = item.Id.ToString()
-            // });
-            //
-            // ViewBag.listItems = listItems;
-            //
-            // Post post = new Post();
-
             PostVM postVm = new PostVM()
             {
                 Post = new Post(),

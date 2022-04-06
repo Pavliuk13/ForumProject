@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ForumProject.Models;
+using ForumProject.Models.AppDBContext;
+using ForumProject.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace ForumProject.Controllers
 {
@@ -14,15 +17,21 @@ namespace ForumProject.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AppDBContext _context;
         
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, AppDBContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(new HomeVM()
+            {
+                Posts = _context.Posts.Include(el => el.Category), 
+                Categories = _context.Categories
+            });
         }
 
         public IActionResult Privacy()

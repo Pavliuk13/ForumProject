@@ -182,3 +182,4 @@ D:\Programming\ForumProject\obj\Debug\net5.0\ForumProject.pdb
 D:\Programming\ForumProject\obj\Debug\net5.0\ForumProject.genruntimeconfig.cache
 D:\Programming\ForumProject\obj\Debug\net5.0\refint\ForumProject.dll
 D:\Programming\ForumProject\obj\Debug\net5.0\Razor\Views\Post\Delete.cshtml.g.cs
+D:\Programming\ForumProject\obj\Debug\net5.0\Razor\Views\Shared\_IndividualPostCart.cshtml.g.cs
