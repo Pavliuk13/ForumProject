@@ -25,10 +25,10 @@ namespace ForumProject.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            IEnumerable<Post> posts = _db.Posts.ToList();
-            foreach (var obj in posts)
-                obj.Category = _db.Categories.FirstOrDefault(el => el.Id == obj.CategoryId);
-            
+            IEnumerable<Post> posts = _db.Posts.Include(el => el.Category);
+            // foreach (var obj in posts)
+            //     obj.Category = _db.Categories.FirstOrDefault(el => el.Id == obj.CategoryId);
+            //
             return View(posts);
         }
 
