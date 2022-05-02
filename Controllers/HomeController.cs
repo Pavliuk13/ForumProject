@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -6,7 +7,9 @@ using ForumProject.Models;
 using ForumProject.Models.AppDBContext;
 using ForumProject.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using ForumProject.Utility;
 
 namespace ForumProject.Controllers
 {
@@ -50,6 +53,22 @@ namespace ForumProject.Controllers
                 return NotFound("Post is not found. Probably, it deleted");
 
             return View(detailsVm);
+        }
+        
+        [HttpPost, ActionName("Details")]
+        public IActionResult DetailsPost(int id)
+        {
+            List<ReadList> readList = new List<ReadList>();
+            if (HttpContext.Session.Get<IEnumerable<ReadList>>(WebConst.SessionReadList) != null && 
+                HttpContext.Session.Get<IEnumerable<ReadList>>(WebConst.SessionReadList).Any())
+            {
+                readList = HttpContext.Session.Get<List<ReadList>>(WebConst.SessionReadList);
+            }
+            
+            readList.Add(new ReadList(){ PostId = id });
+            HttpContext.Session.Set(WebConst.SessionReadList, readList);
+
+            return RedirectToAction(nameof(Index));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

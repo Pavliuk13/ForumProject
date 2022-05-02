@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+@using ForumProject.Models.AppDBContext;
+@using ForumProject.Utility;
+@inject IHttpContextAccessor _contextAccessor;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -37,6 +42,23 @@
                                 <li><a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
                             </ul>
                         </li>
+                        <li>
+                            @if (_contextAccessor.HttpContext.Session.Get<List<ReadList>>(WebConst.SessionReadList) != null)
+                            {
+                                <a asp-action="Index" asp-controller="List" class="nav-link">
+                                    @{
+                                        var count = _contextAccessor.HttpContext.Session.Get<List<ReadList>>(WebConst.SessionReadList).Count;
+                                    }
+                                    <i class="fa-solid fa-bookmark"></i> &nbsp; (@count)
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="#" class="nav-link">
+                                    <i class="fa-solid fa-bookmark"></i> &nbsp; (0)
+                                </a>
+                            }
+                        </li>
                     </ul>
                 }
                 else
@@ -68,6 +90,7 @@
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/74fb05f4c1.js" crossorigin="anonymous"></script>
 <!-- include summernote css/js -->
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
