@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ForumProject.Models;
@@ -25,6 +22,7 @@ namespace ForumProject.Controllers
             _context = context;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View(new HomeVM()
@@ -34,9 +32,24 @@ namespace ForumProject.Controllers
             });
         }
 
+        [HttpGet]
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            DetailsVM detailsVm = new DetailsVM()
+            {
+                Post = _context.Posts.Include(el => el.Category).FirstOrDefault(el => el.Id == id),
+                ExistInReadingBook = false
+            };
+            if (detailsVm.Post == null)
+                return NotFound("Post is not found. Probably, it deleted");
+
+            return View(detailsVm);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
