@@ -7,7 +7,6 @@ using ForumProject.Models;
 using ForumProject.Models.AppDBContext;
 using ForumProject.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using ForumProject.Utility;
 
@@ -49,6 +48,19 @@ namespace ForumProject.Controllers
                 Post = _context.Posts.Include(el => el.Category).FirstOrDefault(el => el.Id == id),
                 ExistInReadingBook = false
             };
+            
+            List<ReadList> readList = new List<ReadList>();
+            if (HttpContext.Session.Get<IEnumerable<ReadList>>(WebConst.SessionReadList) != null && 
+                HttpContext.Session.Get<IEnumerable<ReadList>>(WebConst.SessionReadList).Any())
+            {
+                readList = HttpContext.Session.Get<List<ReadList>>(WebConst.SessionReadList);
+            }
+            
+            if (readList.Where(item => item.PostId == id).Any())
+            {
+                detailsVm.ExistInReadingBook = true;
+            }
+            
             if (detailsVm.Post == null)
                 return NotFound("Post is not found. Probably, it deleted");
 
@@ -64,9 +76,32 @@ namespace ForumProject.Controllers
             {
                 readList = HttpContext.Session.Get<List<ReadList>>(WebConst.SessionReadList);
             }
+
+            if (!readList.Where(item => item.PostId == id).Any())
+            {
+                readList.Add(new ReadList(){ PostId = id });
+                HttpContext.Session.Set(WebConst.SessionReadList, readList);
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+        
+        public IActionResult RemoveFromCart(int id)
+        {
+            List<ReadList> readList = new List<ReadList>();
+            if (HttpContext.Session.Get<IEnumerable<ReadList>>(WebConst.SessionReadList) != null && 
+                HttpContext.Session.Get<IEnumerable<ReadList>>(WebConst.SessionReadList).Any())
+            {
+                readList = HttpContext.Session.Get<List<ReadList>>(WebConst.SessionReadList);
+            }
+
+            var obj = readList.FirstOrDefault(item => item.PostId == id);
             
-            readList.Add(new ReadList(){ PostId = id });
-            HttpContext.Session.Set(WebConst.SessionReadList, readList);
+            if (obj != null)
+            {
+                readList.Remove(obj);
+                HttpContext.Session.Set(WebConst.SessionReadList, readList);
+            }
 
             return RedirectToAction(nameof(Index));
         }
