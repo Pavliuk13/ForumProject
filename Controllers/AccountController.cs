@@ -30,7 +30,7 @@ namespace ForumProject.Controllers
             {
                 var user = new IdentityUser()
                 {
-                    UserName = model.Email,
+                    UserName = model.UserName,
                     Email = model.Email
                 };
 
@@ -64,7 +64,7 @@ namespace ForumProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(user.Email, user.Password, user.RememberMe, false);
+                var result = await _signInManager.PasswordSignInAsync(user.UserName, user.Password, user.RememberMe, false);
                 if (result.Succeeded)
                     return RedirectToAction("Index", "Home");
                 ModelState.AddModelError(string.Empty, "Invalid login attempt");

@@ -184,3 +184,9 @@ D:\Programming\ForumProject\obj\Debug\net5.0\refint\ForumProject.dll
 D:\Programming\ForumProject\obj\Debug\net5.0\Razor\Views\Post\Delete.cshtml.g.cs
 D:\Programming\ForumProject\obj\Debug\net5.0\Razor\Views\Shared\_IndividualPostCart.cshtml.g.cs
 D:\Programming\ForumProject\obj\Debug\net5.0\Razor\Views\Home\Details.cshtml.g.cs
+D:\Programming\ForumProject\bin\Debug\net5.0\ForumProject.StaticWebAssets.xml
+D:\Programming\ForumProject\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+D:\Programming\ForumProject\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
+D:\Programming\ForumProject\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\Programming\ForumProject\obj\Debug\net5.0\ForumProject.MvcApplicationPartsAssemblyInfo.cs
+D:\Programming\ForumProject\obj\Debug\net5.0\staticwebassets\ForumProject.StaticWebAssets.xml
