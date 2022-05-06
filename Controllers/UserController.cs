@@ -76,7 +76,7 @@ namespace ForumProject.Controllers
             IdentityUser user = await _userManager.FindByIdAsync(id);
             if (user != null)
             {
-                IdentityResult result = await _userManager.DeleteAsync(user);
+                await _userManager.DeleteAsync(user);
             }
             return RedirectToAction("Index");
         }

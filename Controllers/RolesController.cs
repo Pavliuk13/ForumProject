@@ -10,8 +10,8 @@ namespace ForumProject.Controllers
 {
     public class RolesController : Controller
     {
-        private RoleManager<IdentityRole> _roleManager;
-        private UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly UserManager<IdentityUser> _userManager;
 
         public RolesController(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager)
         {
