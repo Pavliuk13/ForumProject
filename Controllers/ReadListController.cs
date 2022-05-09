@@ -3,10 +3,12 @@ using System.Linq;
 using ForumProject.Models.AppDBContext;
 using Microsoft.AspNetCore.Mvc;
 using ForumProject.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 namespace ForumProject.Controllers
 {
+    [Authorize]
     public class ReadListController : Controller
     {
         private readonly AppDBContext _context;

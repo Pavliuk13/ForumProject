@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using ForumProject.Models.AppDBContext;
 using ForumProject.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ForumProject.Controllers
 {
+    [Authorize(Roles = "SuperAdmin, Admin")]
     public class PostController : Controller
     {
         private readonly AppDBContext _db;

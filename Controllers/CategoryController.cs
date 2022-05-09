@@ -1,9 +1,11 @@
 ﻿using System.Linq;
 using ForumProject.Models.AppDBContext;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ForumProject.Controllers
 {
+    [Authorize(Roles = "SuperAdmin, Admin")]
     public class CategoryController : Controller
     {
         private readonly AppDBContext _db;

@@ -1,11 +1,13 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using ForumProject.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ForumProject.Controllers
 {
+    [Authorize(Roles = "SuperAdmin")]
     public class UserController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -24,7 +26,7 @@ namespace ForumProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityUser user = new IdentityUser() {Email = model.Email, UserName = model.Email};
+                IdentityUser user = new IdentityUser() {UserName = model.UserName, Email = model.Email};
 
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -43,7 +45,7 @@ namespace ForumProject.Controllers
             if (user == null)
                 return NotFound();
             
-            EditUserViewModel model = new EditUserViewModel {Id = user.Id, Email = user.Email};
+            EditUserViewModel model = new EditUserViewModel {Id = user.Id, Email = user.Email, UserName = user.UserName};
             return View(model);
         }
 
@@ -55,9 +57,9 @@ namespace ForumProject.Controllers
                 IdentityUser user = await _userManager.FindByIdAsync(model.Id);
                 if (user != null)
                 {
-                    user.UserName = model.Email;
+                    user.UserName = model.UserName;
                     user.Email = model.Email;
-                    
+
                     var result = await _userManager.UpdateAsync(user);
                     if (result.Succeeded)
                         return RedirectToAction("Index");

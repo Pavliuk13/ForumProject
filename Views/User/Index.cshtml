@@ -4,13 +4,14 @@
     ViewData["Title"] = "Users list";
 }
 
-<a asp-action="Create">Create user</a>
+<a class="btn btn-dark" asp-action="Create">Create user</a>
 
 <table class="table">
-    <tr><th>Email</th><th></th></tr>
+    <tr><th>UserName</th><th>Email</th><th>Action</th></tr>
     @foreach (var user in Model)
     {
         <tr>
+            <td>@user.UserName</td>
             <td>@user.Email</td>
             <td>
                 <form asp-action="Delete" asp-route-id="@user.Id" method="post">

@@ -7,6 +7,10 @@
 <form asp-action="Create" asp-controller="User">
     <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
+        <label asp-for="UserName" class="control-label">UserName</label>
+        <input type="text" asp-for="UserName" class="form-control" />
+    </div>
+    <div class="form-group">
         <label asp-for="Email" class="control-label">Email</label>
         <input type="text" asp-for="Email" class="form-control" />
     </div>
@@ -15,6 +19,6 @@
         <input type="password" asp-for="Password" class="form-control" />
     </div>
     <div class="form-group">
-        <input type="submit" value="Add" class="btn btn-outline-secondary" />
+        <input type="submit" value="Add" class="btn btn-primary" />
     </div>
 </form>

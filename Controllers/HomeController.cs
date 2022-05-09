@@ -12,7 +12,6 @@ using ForumProject.Utility;
 
 namespace ForumProject.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -39,8 +38,9 @@ namespace ForumProject.Controllers
         {
             return View();
         }
-
+        
         [HttpGet]
+        [Authorize]
         public IActionResult Details(int id)
         {
             DetailsVM detailsVm = new DetailsVM()
