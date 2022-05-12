@@ -1,0 +1,47 @@
+﻿@import "variables"
+
+*
+  padding: 0
+  margin: 0
+
+html, body
+  height: 100%
+  
+body
+  background-color: $background
+  
+  
+a
+  text-decoration: none
+
+.btn
+  font-weight: bold
+  
+.btn-warning
+  background: $secondColor
+  border: 1px solid $secondColor
+  &:hover
+    background-color: $thirdColor
+    border: 1px solid $secondColor
+    
+header
+  .btn-warning
+    a
+      color: $background
+  .btn-outline-light
+    a
+      color: white
+    &:hover
+      a
+        color: $background
+  .nav
+    a
+      font-weight: bold
+      color: white
+      &:hover
+        color: $secondColor
+        transition: .2s ease
+      
+  
+
+  
