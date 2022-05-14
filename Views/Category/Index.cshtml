@@ -7,9 +7,9 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Category list</h2>
+            <h2>Category list</h2>
         </div>
-        <div class="col-6 text-right">
+        <div class="col-6 text-right text-end">
             <a asp-controller="Category" asp-action="Create" class="btn btn-primary">Create new category</a>
         </div>
     </div>
@@ -21,10 +21,10 @@
         <table class="table table-bordered table-striped" style="width:100%">
             <thread>
                 <tr>
-                    <th>
+                    <th class="text-white">
                         Category name
                     </th>
-                    <th>
+                    <th class="text-white">
                         Action
                     </th>
                 </tr>
@@ -33,7 +33,7 @@
                 @foreach (var obj in Model)
                 {
                     <tr>
-                        <td width="50%">@obj.Name</td>
+                        <td width="50%" class="text-white">@obj.Name</td>
                         <td class="text-center">
                             <div class="w-75 btn-group" role="group">
                                 <a asp-controller="Category" asp-route-Id="@obj.Id" asp-action="Edit" class="btn btn-primary mx-2">Edit</a>

@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="text-center">
-        <button class="btn btn-dark filter-button" data-filter="all">All</button>
+        <button class="btn btn-outline-secondary filter-button" data-filter="all">All</button>
         @foreach (var obj in Model.Categories)
         {
             <button class="btn btn-outline-secondary filter-button" data-filter="@obj.Name.Replace(' ', '_')">
@@ -18,10 +18,12 @@
             @foreach (var obj in Model.Posts)
             {
                 <partial name="_IndividualPostCart" model="obj"/>
+                @Html.Raw("</div>");
             }
         </div>
     </div>
 </div>
+
 
 @section Scripts
 {

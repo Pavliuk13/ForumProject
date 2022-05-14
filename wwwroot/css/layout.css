@@ -9,6 +9,7 @@ html, body {
 
 body {
   background-color: #0b0c10;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 a {
@@ -28,6 +29,11 @@ a {
   border: 1px solid #66fcf1;
 }
 
+header {
+  font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 20px;
+  background-color: #1f2833;
+}
 header .btn-warning a {
   color: #0b0c10;
 }
@@ -42,6 +48,87 @@ header .nav a {
   color: white;
 }
 header .nav a:hover {
+  color: #66fcf1;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+h2 {
+  color: #66fcf1;
+  font-weight: bold;
+}
+
+.filter-button {
+  border: 2px solid #66fcf1;
+  color: #66fcf1;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.card {
+  border: 2px solid #66fcf1;
+}
+
+.card-header {
+  background-color: #1f2833;
+  width: 100%;
+  margin-left: 0.2px;
+}
+.card-header label {
+  color: white;
+  font-size: 18px;
+}
+.card-header label .text-info {
+  color: #66fcf1;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 5px;
+  background-color: #0b0c10;
+}
+.card-body .row {
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+.card-body .desc {
+  color: white;
+}
+
+.card-footer {
+  background-color: #0b0c10;
+}
+.card-footer .btn {
+  background-color: #1f2833;
+}
+.card-footer .btn:hover {
+  background-color: #66fcf1;
+  color: #1f2833;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.footer {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #1f2833;
+  height: 60px;
+}
+.footer .container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer a {
+  color: white;
+  font-size: 30px;
+}
+.footer a:hover {
   color: #66fcf1;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;

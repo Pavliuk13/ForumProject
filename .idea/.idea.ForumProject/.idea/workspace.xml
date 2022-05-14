@@ -7,14 +7,24 @@
   <component name="ChangeListManager">
     <list default="true" id="ed610e83-6764-4e7f-bebe-1d5db4898cd7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ForumProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ForumProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ForumProject.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ForumProject.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Category/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Category/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Home/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Details.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Post/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Post/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/_IndividualPostCart.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_IndividualPostCart.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Category/Index.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Category/Index.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Home/Details.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Home/Details.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Post/Index.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Post/Index.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Shared/_IndividualPostCart.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Shared/_IndividualPostCart.cshtml.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/css/site.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/sass/layout.sass" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/sass/layout.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +119,11 @@
       <workItem from="1651930776774" duration="984000" />
       <workItem from="1652042746666" duration="2598000" />
       <workItem from="1652117578192" duration="6866000" />
-      <workItem from="1652368714440" duration="7760000" />
+      <workItem from="1652368714440" duration="11429000" />
+      <workItem from="1652451849018" duration="7625000" />
+      <workItem from="1652512632970" duration="7096000" />
+      <workItem from="1652520360163" duration="4145000" />
+      <workItem from="1652527968384" duration="7472000" />
     </task>
     <task id="LOCAL-00001" summary="Added ViewModel and used instead ViewBag">
       <created>1648573921629</created>

@@ -1,21 +1,35 @@
 ﻿@model ForumProject.Models.AppDBContext.Post
 
-<div class="col-lg-4 col-md-6 pb-4 filter @Model.Category.Name.Replace(' ', '_')">
-    <div class="card bg-white rounded shadow-sm" style="border: 1px solid #222">
-        <div class="card-body px-3 pt-3 pb-1 row">
-            <div class="col-7"><label class="float-left" style="font-weight: bold">@Model.Theme</label></div>
-            <div class="col-5"><label class="float-right"><span class="text-info h5">@Model.Category.Name</span></label></div>
+
+<div class="col-lg-12 col-md-12 pb-4 filter @Model.Category.Name.Replace(' ', '_')">
+    <div class="card mt-2">
+        <div class="card-header row">
+            <div class="col-12 col-md-6">
+                <label style="font-weight: bold">@Model.Theme</label>
+            </div>
+            <div class="col-12 col-md-6">
+                <label><span class="text-info h5">@Model.Category.Name</span></label>
+            </div>
         </div>
-        <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@WebConst.ImagePath@Model.Image" alt="Card image cap"/>
-        <div class="card-body p-1 px-3 row">
-            <div class="col-12">
-                <span class="badge p-2 border w-100" style="background-color: lavenderblush; font-weight: bold; color: #000">Short Description</span>
+        <div class="card-body">
+            <div class="container rounded p-2">
+                <div class="row">
+                    <img class="col-12 col-lg-4 p-1 text-center" src="@WebConst.ImagePath@Model.Image" alt="Card image cap"/>
+                    <div class="col-12 col-lg-8">
+                        <div class="row pl-3">
+                            <div class="col-12">
+                                <p>@Html.Raw(Model.Description.Substring(0, (int) (Model.Description.Length > 700 ? 700 : Model.Description.Length)))...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 pt-2" style="font-size: 13px; text-align: justify; color: #000; font-weight: bold">
-                <p>@Model.Description.Substring(0, (int)(@Model.Description.Length * 0.4))...</p>
-            </div>
-            <div class="col-12 pt-1">
-                <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-dark form-control btn-sm pt-2" style="height: 40px">Read Post</a>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-12 col-md-12 pb-1 ">
+                    <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-dark form-control btn-lg" style="height: 50px">Read Post</a>
+                </div>
             </div>
         </div>
     </div>
