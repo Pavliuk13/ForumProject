@@ -133,3 +133,21 @@ h2 {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
+
+.post-header {
+  color: #66fcf1;
+  font-size: 40px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #66fcf1;
+  margin-top: 5px;
+}
+.icon i {
+  margin-right: 10px;
+}
+
+.btn.btn-details {
+  background-color: #45a29e;
+}

@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
 namespace ForumProject.Models.AppDBContext
 {
@@ -18,8 +20,16 @@ namespace ForumProject.Models.AppDBContext
 
         [Display(Name = "Category type")]
         public int CategoryId { get; set; }
+
+        [Display(Name = "Author")]
+        public string UserId { get; set; }
+
+        public DateTime DateTime { get; set; }
         
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
+        
+        [ForeignKey("UserId")]
+        public virtual IdentityUser User { get; set; }
     }
 }

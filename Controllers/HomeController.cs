@@ -28,7 +28,7 @@ namespace ForumProject.Controllers
         {
             return View(new HomeVM()
             {
-                Posts = _context.Posts.Include(el => el.Category), 
+                Posts = _context.Posts.Include(el => el.Category).Include(el => el.User),
                 Categories = _context.Categories
             });
         }
@@ -45,7 +45,7 @@ namespace ForumProject.Controllers
         {
             DetailsVM detailsVm = new DetailsVM()
             {
-                Post = _context.Posts.Include(el => el.Category).FirstOrDefault(el => el.Id == id),
+                Post = _context.Posts.Include(el => el.Category).Include(el => el.User).FirstOrDefault(el => el.Id == id),
                 ExistInReadingBook = false
             };
             

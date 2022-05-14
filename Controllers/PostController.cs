@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Claims;
 using ForumProject.Models.AppDBContext;
 using ForumProject.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -63,6 +64,8 @@ namespace ForumProject.Controllers
         {
             if (ModelState.IsValid)
             {
+                var claimsIdentity = (ClaimsIdentity)User.Identity;
+                var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
                 string upload, fileName, extention;
                 
                 var files = HttpContext.Request.Form.Files;
@@ -81,6 +84,8 @@ namespace ForumProject.Controllers
                     }
 
                     postVm.Post.Image = fileName + extention;
+                    postVm.Post.DateTime = DateTime.Now;
+                    postVm.Post.UserId = _db.IdentityUsers.FirstOrDefault(u => u.Id == claim.Value).Id;
 
                     _db.Posts.Add(postVm.Post);
                 }

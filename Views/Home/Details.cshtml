@@ -8,48 +8,44 @@
     <form method="post">
         <input asp-for="@Model.Post.Id" hidden />
         <div class="container backgroundWhite pt-4">
-            <div class="card" style="border:1px solid #000000; ">
+            <div class="card">
                 <div class="card-header bg-dark text-light ml-0 row container" style="border-radius: 0px;">
-                    <div class="col-12 col-md-6">
-                        <h1 class="text-white">@Model.Post.Theme</h1>
-                    </div>
-                    <div class="col-12 col-md-6 text-md-right">
-                        <h1 class="text-warning"> @Model.Post.Category.Name</h1>
+                    <div class="col-12 col-lg-12 text-center">
+                        <h1 class="text-warning mt-1"> @Model.Post.Category.Name</h1>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="container rounded p-2">
                         <div class="row">
-                            <div class="col-12 col-lg-4 p-1 text-center">
+                            <div class="col-12 col-lg-4 p-1 left-block">
                                 <img src="@WebConst.ImagePath@Model.Post.Image" width="100%" class="rounded" />
                             </div>
-                            <div class="col-12 col-lg-8">
-                                <div class="row pl-3">
-
-                                    <div class="col-12">
-                                        <h3 class="text-success"></h3>
-
-                                        <p class="text-secondary">@Html.Raw(Model.Post.Description)</p>
-                                    </div>
-
-                                </div>
+                            <div class="col-12 col-lg-8 p-2">
+                                <h1 class="font-weight-bold post-header">@Model.Post.Theme</h1>
+                                <div class="icon"><i class="fa-solid fa-user"></i> @Model.Post.User.UserName</div>
+                                <div class="icon"><i class="fa-solid fa-calendar"></i> @Model.Post.DateTime</div>
+                                <div class="icon"><i class="fa-solid fa-heart"></i>0   <i class="fa-solid fa-x"></i>0</div>
                             </div>
+                            <div class="p-1">
+                                @Html.Raw(Model.Post.Description)
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
-                <div class="card-footer bg-dark">
+                <div class="card-footer">
                     <div class="row">
                         <div class="col-12 col-md-6 pb-1 ">
-                            <a asp-action="Index" class="btn btn-success btn-square form-control btn-lg" style="height:50px;">Back to List</a>
+                            <a asp-action="Index" class="btn btn-success btn-details btn-square form-control btn-lg" style="height:50px;">Back to Posts</a>
                         </div>
                         <div class="col-12 col-md-6 ">
                             @if (Model.ExistInReadingBook)
                             {
-                                <a asp-action="RemoveFromCart" asp-route-id="@Model.Post.Id" class="btn btn-warning btn-square form-control btn-lg" style="height:50px;">Remove from Cart</a>
+                                <a asp-action="RemoveFromCart" asp-route-id="@Model.Post.Id" class="btn btn-details btn-square form-control btn-lg" style="height:50px;">Remove from Saved</a>
                             }
                             else
                             {
-                                <button type="submit" asp-route-id="@Model.Post.Id" class="btn btn-info form-control btn-lg" style="height:50px;">Add to Cart</button>
+                                <button type="submit" asp-route-id="@Model.Post.Id" class="btn btn-details text-white  form-control btn-lg" style="height:50px;">Add to Saved</button>
                             }
                         </div>
                     </div>
