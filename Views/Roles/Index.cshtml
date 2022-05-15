@@ -1,20 +1,55 @@
 ﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
 
-<h2>List of roles</h2>
-<table class="table">
-    @foreach (var role in Model)
+@{
+    ViewData["Title"] = "Roles list";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">List of roles</h2>
+        </div>
+        <div class="col-6 text-right text-end">
+            <a asp-action="Create" type="submit" class="btn btn-sm btn-success">Add role</a>
+            <a asp-action="UsersList" type="submit" class="btn btn-sm btn-warning">Users list</a>
+        </div>
+    </div>
+
+    <br/><br/>
+
+    @if (Model.Any())
     {
-        <tr>
-            <td>@role.Name</td>
-            <td>
-                <form asp-action="Delete" asp-route-id="@role.Id" method="post">
-                    <button type="submit" class="btn btn-sm btn-danger">
-                        Delete
-                    </button>
-                </form>
-            </td>
-        </tr>
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thread>
+                <tr>
+                    <th class="text-white">
+                        Role name
+                    </th>
+                    <th class="text-white">
+                        Action
+                    </th>
+                </tr>
+            </thread>
+            <trbody>
+                @foreach (var role in Model)
+                {
+                    <tr>
+                        <td width="30%" class="text-white">@role.Name</td>
+                        <td class="text-center">
+                            <form asp-action="Delete" asp-route-id="@role.Id" method="post">
+                                <button type="submit" class="btn btn-sm btn-danger">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </trbody>
+        </table>
     }
-</table>
-<a asp-action="Create" type="submit" class="btn btn-sm btn-success">Add role</a>
-<a asp-action="UsersList" type="submit" class="btn btn-sm btn-dark">Users list</a>
+    else
+    {
+        <p class="text-white">Roles don't exist.</p>
+    }
+</div>
+

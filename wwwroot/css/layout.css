@@ -151,3 +151,38 @@ h2 {
 .btn.btn-details {
   background-color: #45a29e;
 }
+
+.img-fluid {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.btn1 {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  background-color: #45a29e;
+  color: #0b0c10;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.btn1:hover {
+  background-color: #66fcf1;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.logo img {
+  height: 65px;
+}
+
+.row.no-gutters {
+  border-radius: 30px;
+  -webkit-box-shadow: 10px 10px 10px #45a29e;
+          box-shadow: 10px 10px 10px #45a29e;
+}
+
+.container {
+  min-height: 90%;
+}
