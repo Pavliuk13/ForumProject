@@ -4,21 +4,51 @@
     ViewData["Title"] = "Create user";
 }
 
-<form asp-action="Create" asp-controller="User">
-    <div asp-validation-summary="All" class="text-danger"></div>
-    <div class="form-group">
-        <label asp-for="UserName" class="control-label">UserName</label>
-        <input type="text" asp-for="UserName" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Email" class="control-label">Email</label>
-        <input type="text" asp-for="Email" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Password" class="control-label">Password</label>
-        <input type="password" asp-for="Password" class="form-control" />
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Add" class="btn btn-primary" />
+<form method="post" asp-action="Create" asp-controller="User">
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-info p-3">Create new user</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row mb-3">
+                    <div class="col-4">
+                        <label class="text-white font-weight-bold" asp-for="UserName">UserName</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-4">
+                        <label asp-for="Email" class="text-white font-weight-bold">Email</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-4">
+                        <label asp-for="Password" class="text-white font-weight-bold">Password</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="password" asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <input type="submit" value="Create" class="btn btn-primary w-100" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success w-100">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </form>

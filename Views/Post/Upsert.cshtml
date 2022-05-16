@@ -17,46 +17,46 @@
         </div>
         <div class="row">
             <div class="col-8">
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label asp-for="Post.Theme"></label>
+                <div class="form-group row mb-2">
+                    <div class="col-2">
+                        <label class="text-white font-weight-bold" asp-for="Post.Theme"></label>
                     </div>
-                    <div class="col-8">
+                    <div class="col-10">
                         <input asp-for="Post.Theme" class="form-control"/>
                         <span asp-validation-for="Post.Theme" class="text-danger"></span>
                     </div>
 
                 </div>
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label asp-for="Post.Description"></label>
+                <div class="form-group row mb-2">
+                    <div class="col-2">
+                        <label class="text-white font-weight-bold" asp-for="Post.Description"></label>
                     </div>
-                    <div class="col-8">
-                        <textarea asp-for="Post.Description" class="form-control summernote"></textarea>
+                    <div class="col-10">
+                        <textarea asp-for="Post.Description" class="form-control summernote" style="background-color: white"></textarea>
                         <span asp-validation-for="Post.Description" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <div class="col-4">
+                <div class="form-group row mb-2">
+                    <div class="col-2 text-white font-weight-bold">
                         Image
                     </div>
-                    <div class="col-8">
+                    <div class="col-10">
                         <input type="file" name="files" id="uploadBox" multiple class="form-control"/>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label asp-for="Post.CategoryId"></label>
+                <div class="form-group row mb-2">
+                    <div class="col-2">
+                        <label class="text-white font-weight-bold" asp-for="Post.CategoryId"></label>
                     </div>
-                    <div class="col-8">
+                    <div class="col-10">
                         <select asp-for="Post.CategoryId" asp-items="Model.CategorySelectList" class="form-control">
                             <option disabled selected>--Select Category--</option>
                         </select>
                         <span asp-validation-for="Post.CategoryId" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <div class="col-8 offset-4 row">
+                <div class="form-group row mb-2">
+                    <div class="col-10 offset-2 row">
                         <div class="col">
                             @if (Model.Post.Id != 0)
                             {

@@ -7,24 +7,30 @@
   <component name="ChangeListManager">
     <list default="true" id="ed610e83-6764-4e7f-bebe-1d5db4898cd7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ForumProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ForumProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Account/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Account/Login.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Account/Register.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Category/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Category/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Post/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Post/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Roles/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Roles/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Roles/UsersList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Roles/UsersList.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/User/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/User/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Category/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Category/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Category/Delete.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Category/Delete.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Category/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Category/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Post/Delete.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Post/Delete.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Post/Upsert.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Post/Upsert.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Roles/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Roles/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Roles/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Roles/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/User/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/User/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/User/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/User/Edit.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Account/Login.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Account/Login.cshtml.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Account/Register.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Account/Register.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Category/Index.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Category/Index.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Post/Index.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Post/Index.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Roles/Index.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Roles/Index.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Roles/UsersList.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Roles/UsersList.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/User/Index.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/User/Index.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Category/Create.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Category/Create.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Category/Delete.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Category/Delete.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Category/Edit.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Category/Edit.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Post/Delete.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Post/Delete.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Post/Upsert.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Post/Upsert.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Roles/Create.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Roles/Create.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Roles/Edit.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Roles/Edit.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/User/Create.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/User/Create.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/User/Edit.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/User/Edit.cshtml.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/layout.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/sass/layout.sass" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/sass/layout.sass" afterDir="false" />
     </list>
@@ -126,7 +132,9 @@
       <workItem from="1652512632970" duration="7096000" />
       <workItem from="1652520360163" duration="4145000" />
       <workItem from="1652527968384" duration="22023000" />
-      <workItem from="1652602852565" duration="14832000" />
+      <workItem from="1652602852565" duration="15912000" />
+      <workItem from="1652643964646" duration="5763000" />
+      <workItem from="1652698061688" duration="1607000" />
     </task>
     <task id="LOCAL-00001" summary="Added ViewModel and used instead ViewBag">
       <created>1648573921629</created>
