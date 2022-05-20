@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ForumProject.Models;
@@ -46,7 +47,9 @@ namespace ForumProject.Controllers
             DetailsVM detailsVm = new DetailsVM()
             {
                 Post = _context.Posts.Include(el => el.Category).Include(el => el.User).FirstOrDefault(el => el.Id == id),
-                ExistInReadingBook = false
+                ExistInReadingBook = false,
+                Likes = _context.Likes.Where(el => el.PostId == id).ToList(),
+                Dislikes = _context.Dislikes.Where(el => el.PostId == id).ToList()
             };
             
             List<ReadList> readList = new List<ReadList>();
@@ -104,6 +107,80 @@ namespace ForumProject.Controllers
             }
 
             return RedirectToAction(nameof(Index));
+        }
+        
+        [HttpGet]
+        public IActionResult Like(int postId)
+        {
+            var post = _context.Posts.Find(postId);
+            if (post != null)
+            {
+                var claimsIdentity = (ClaimsIdentity) User.Identity;
+                var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+                var userId = _context.IdentityUsers.FirstOrDefault(u => u.Id == claim.Value).Id;
+
+                var obj = _context.Likes.Where(el => el.PostId == postId && el.UserId == userId).ToList();
+                if (obj.Count == 0)
+                {
+                    var objDislikes = _context.Dislikes.Where(el => el.PostId == postId && el.UserId == userId).ToList();
+                    if (objDislikes.Any())
+                    {
+                        _context.Dislikes.Remove(objDislikes.FirstOrDefault());
+                    }
+                    _context.Likes.Add(new Like()
+                    {
+                        PostId = postId,
+                        UserId = userId
+                    });
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    _context.Likes.Remove(obj.FirstOrDefault());
+                    _context.SaveChanges();
+                }
+
+                return RedirectToAction(nameof(Details), new {id = postId});
+            }
+
+            return NotFound();
+        }
+        
+        [HttpGet]
+        public IActionResult Dislike(int postId)
+        {
+            var post = _context.Posts.Find(postId);
+            if (post != null)
+            {
+                var claimsIdentity = (ClaimsIdentity) User.Identity;
+                var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+                var userId = _context.IdentityUsers.FirstOrDefault(u => u.Id == claim.Value).Id;
+
+                var obj = _context.Dislikes.Where(el => el.PostId == postId && el.UserId == userId).ToList();
+                if (obj.Count == 0)
+                {
+                    var objLikes = _context.Likes.Where(el => el.PostId == postId && el.UserId == userId).ToList();
+                    if (objLikes.Any())
+                    {
+                        _context.Likes.Remove(objLikes.FirstOrDefault());
+                    }
+                    _context.Dislikes.Add(new Dislike()
+                    {
+                        PostId = postId,
+                        UserId = userId
+                    });
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    _context.Dislikes.Remove(obj.FirstOrDefault());
+                    _context.SaveChanges();
+                }
+
+                return RedirectToAction(nameof(Details), new {id = postId});
+            }
+
+            return NotFound();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
