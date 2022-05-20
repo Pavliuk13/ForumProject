@@ -29,13 +29,15 @@
                                      ViewData["href-dislikes"] = $"/Home/Dislike?postId={Model.Post.Id}";
                                  }
                                 
-                                <a href=@ViewData["href-likes"] class="btn btn-outline-success">
-                                    <i class="fa-solid fa-heart"></i> &nbsp; @Model.Likes.Count()
-                                </a>
-                                
-                                <a href=@ViewData["href-dislikes"] class="btn btn-outline-danger">
-                                    <i class="fa-solid fa-x"></i> &nbsp; @Model.Dislikes.Count()
-                                </a>
+                                 <div class="mt-1">
+                                     <a href=@ViewData["href-likes"] class="btn btn-outline-success">
+                                         <i class="fa-solid fa-heart"></i> &nbsp; @Model.Likes.Count()
+                                     </a>
+                                     <a href=@ViewData["href-dislikes"] class="btn btn-outline-danger">
+                                         <i class="fa-solid fa-x"></i> &nbsp; @Model.Dislikes.Count()
+                                     </a>
+                                 </div>
+                                 
                             </div>
                             <div class="p-1">
                                 @Html.Raw(Model.Post.Description)
