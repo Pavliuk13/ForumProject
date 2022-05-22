@@ -1,0 +1,21 @@
+﻿@model ForumProject.Models.AppDBContext.Comment
+
+<div class="col-12 card border-2 mt-2 p-2" style="background-color: #0b0c10;">
+    <input type="text" hidden asp-for="Id">
+    <div class="card-body">
+        <div class="card-title mb-1" style="font-size: 20px; color: #66fcf1; font-weight: bold;">
+            <i class="fa-solid fa-circle-user"></i> &nbsp; @Model.User.UserName
+        </div>
+        <div class="card-subtitle mb-2" style="font-size: 20px; color: #66fcf1; font-weight: bold;">
+            <i class="fa-solid fa-calendar"></i> &nbsp; @Model.Date
+        </div>
+        <div class="card-text mb-2 mt-2 text-white pl-2">
+            @Html.Raw(Model.Text)
+        </div>
+        <div class="card-footer">
+            <div class="col-2">
+                <button type="submit" asp-route-parentId="@Model.Id" class="btn btn-warning btn-sm text-white form-control"> <i class="fa-solid fa-reply"></i> &nbsp; Reply</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -191,3 +191,4 @@ D:\Programming\ForumProject\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.
 D:\Programming\ForumProject\obj\Debug\net5.0\ForumProject.MvcApplicationPartsAssemblyInfo.cs
 D:\Programming\ForumProject\obj\Debug\net5.0\staticwebassets\ForumProject.StaticWebAssets.xml
 D:\Programming\ForumProject\obj\Debug\net5.0\Razor\Views\ReadList\Index.cshtml.g.cs
+D:\Programming\ForumProject\obj\Debug\net5.0\Razor\Views\Shared\_CommentView.cshtml.g.cs

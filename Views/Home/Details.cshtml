@@ -4,66 +4,94 @@
     ViewData["Title"] = Model.Post.Theme;
 }
 
-<div class="">
-    <form method="post" asp-action="Details">
-        <input asp-for="@Model.Post.Id" hidden />
-        <div class="container backgroundWhite pt-4">
-            <div class="card">
-                <div class="card-header bg-dark text-light ml-0 row container" style="border-radius: 0px;">
-                    <div class="col-12 col-lg-12 text-center">
-                        <h1 class="text-warning mt-1"> @Model.Post.Category.Name</h1>
-                    </div>
+<form method="post" asp-action="Details">
+    <input asp-for="@Model.Post.Id" hidden />
+    <div class="container backgroundWhite pt-4">
+        <div class="card">
+            <div class="card-header bg-dark text-light ml-0 row container" style="border-radius: 0px;">
+                <div class="col-12 col-lg-12 text-center">
+                    <h1 class="text-warning mt-1"> @Model.Post.Category.Name</h1>
                 </div>
-                <div class="card-body">
-                    <div class="container rounded p-2">
-                        <div class="row">
-                            <div class="col-12 col-lg-4 p-1 left-block">
-                                <img src="@WebConst.ImagePath@Model.Post.Image" width="100%" class="rounded" />
-                            </div>
-                            <div class="col-12 col-lg-8 p-2">
-                                <h1 class="font-weight-bold post-header">@Model.Post.Theme</h1>
-                                <div class="icon"><i class="fa-solid fa-user"></i> @Model.Post.User.UserName</div>
-                                <div class="icon"><i class="fa-solid fa-calendar"></i> @Model.Post.DateTime</div>
-                                 @{
-                                    ViewData["href-likes"] = $"/Home/Like?postId={Model.Post.Id}";
-                                     ViewData["href-dislikes"] = $"/Home/Dislike?postId={Model.Post.Id}";
-                                 }
-                                
-                                 <div class="mt-1">
-                                     <a href=@ViewData["href-likes"] class="btn btn-outline-success">
-                                         <i class="fa-solid fa-heart"></i> &nbsp; @Model.Likes.Count()
-                                     </a>
-                                     <a href=@ViewData["href-dislikes"] class="btn btn-outline-danger">
-                                         <i class="fa-solid fa-x"></i> &nbsp; @Model.Dislikes.Count()
-                                     </a>
-                                 </div>
-                                 
-                            </div>
-                            <div class="p-1">
-                                @Html.Raw(Model.Post.Description)
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer">
+            </div>
+            <div class="card-body">
+                <div class="container rounded p-2">
                     <div class="row">
-                        <div class="col-12 col-md-6 pb-1 ">
-                            <a asp-action="Index" class="btn btn-success btn-details btn-square form-control btn-lg" style="height:50px;">Back to Posts</a>
+                        <div class="col-12 col-lg-4 p-1 left-block">
+                            <img src="@WebConst.ImagePath@Model.Post.Image" width="100%" class="rounded" />
                         </div>
-                        <div class="col-12 col-md-6 ">
-                            @if (Model.ExistInReadingBook)
-                            {
-                                <a asp-action="RemoveFromCart" asp-route-id="@Model.Post.Id" class="btn btn-details btn-square form-control btn-lg" style="height:50px;">Remove from Saved</a>
+                        <div class="col-12 col-lg-8 p-2">
+                            <h1 class="font-weight-bold post-header">@Model.Post.Theme</h1>
+                            <div class="icon"><i class="fa-solid fa-user"></i> @Model.Post.User.UserName</div>
+                            <div class="icon"><i class="fa-solid fa-calendar"></i> @Model.Post.DateTime</div>
+                            @{
+                                ViewData["href-likes"] = $"/Home/Like?postId={Model.Post.Id}";
+                                ViewData["href-dislikes"] = $"/Home/Dislike?postId={Model.Post.Id}";
                             }
-                            else
-                            {
-                                <button type="submit" asp-route-id="@Model.Post.Id" class="btn btn-details text-white  form-control btn-lg" style="height:50px;">Add to Saved</button>
-                            }
+                                
+                            <div class="mt-1">
+                                <a href=@ViewData["href-likes"] class="btn btn-outline-success">
+                                    <i class="fa-solid fa-heart"></i> &nbsp; @Model.Likes.Count()
+                                </a>
+                                <a href=@ViewData["href-dislikes"] class="btn btn-outline-danger">
+                                    <i class="fa-solid fa-x"></i> &nbsp; @Model.Dislikes.Count()
+                                </a>
+                            </div>
+                                 
                         </div>
+                        <div class="p-1">
+                            @Html.Raw(Model.Post.Description)
+                        </div>
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-12 col-md-6 pb-1 ">
+                        <a asp-action="Index" class="btn btn-success btn-details btn-square form-control btn-lg" style="height:50px;">Back to Posts</a>
+                    </div>
+                    <div class="col-12 col-md-6 ">
+                        @if (Model.ExistInReadingBook)
+                        {
+                            <a asp-action="RemoveFromCart" asp-route-id="@Model.Post.Id" class="btn btn-details btn-square form-control btn-lg" style="height:50px;">Remove from Saved</a>
+                        }
+                        else
+                        {
+                            <button type="submit" asp-route-id="@Model.Post.Id" class="btn btn-details text-white form-control btn-lg" style="height:50px;">Add to Saved</button>
+                        }
                     </div>
                 </div>
             </div>
         </div>
-    </form>
-</div>
+    </div>
+</form>
+
+
+<form method="post" asp-action="Comments" class="mt-5">
+    <div class="container">
+        <h2 class="text-center mb-2">Comments (@Model.PostComments.Count)</h2>
+        <textarea name="text" class="form-control summernote" style="background-color: white"></textarea>
+        <div class="col-2">
+            <button type="submit" asp-action="Comments" asp-route-postId="@Model.Post.Id" asp-route-parentId="@null" class="btn btn-success text-white form-control mb-3"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+        
+        @foreach (var obj in Model.PostComments)
+        {
+            <partial name="_CommentView" model="obj"/>
+        }
+    </div>
+</form>
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+    <script>
+        $(document).ready(function() {
+          $('.summernote').summernote({
+            height: 100
+          });
+        });
+    </script>
+}

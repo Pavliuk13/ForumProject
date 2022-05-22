@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
@@ -49,7 +50,8 @@ namespace ForumProject.Controllers
                 Post = _context.Posts.Include(el => el.Category).Include(el => el.User).FirstOrDefault(el => el.Id == id),
                 ExistInReadingBook = false,
                 Likes = _context.Likes.Where(el => el.PostId == id).ToList(),
-                Dislikes = _context.Dislikes.Where(el => el.PostId == id).ToList()
+                Dislikes = _context.Dislikes.Where(el => el.PostId == id).ToList(),
+                PostComments = _context.Comments.Where(el => el.PostId == id).Include(el => el.User).Include(el => el.Post).OrderByDescending(el => el.Date).ToList()
             };
             
             List<ReadList> readList = new List<ReadList>();
@@ -87,6 +89,26 @@ namespace ForumProject.Controllers
             }
 
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public IActionResult Comments(int postId, int? parentId,string text)
+        {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            Comment comment = new Comment()
+            {
+                Date = DateTime.Now,
+                ParentId = parentId,
+                Text = text,
+                PostId = postId,
+                UserId = _context.IdentityUsers.FirstOrDefault(u => u.Id == claim.Value).Id
+            };
+            
+            _context.Comments.Add(comment);
+            _context.SaveChanges();
+            
+            return RedirectToAction(nameof(Details), new {id = postId});
         }
         
         public IActionResult RemoveFromCart(int id)

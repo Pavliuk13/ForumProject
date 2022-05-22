@@ -17,6 +17,12 @@ namespace ForumProject.Models.AppDBContext
         {
             builder.Entity<Like>().HasKey(u => new {u.PostId, u.UserId});
             builder.Entity<Dislike>().HasKey(u => new {u.PostId, u.UserId});
+            builder.Entity<Comment>(comment =>
+            {
+                comment.HasOne(c => c.Parent)
+                    .WithMany(c => c.Children)
+                    .HasForeignKey(c => c.ParentId);
+            });
             base.OnModelCreating(builder);
         }
 
@@ -25,5 +31,6 @@ namespace ForumProject.Models.AppDBContext
         public DbSet<Post> Posts { get; set; }
         public DbSet<Like> Likes { get; set; }
         public DbSet<Dislike> Dislikes { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }

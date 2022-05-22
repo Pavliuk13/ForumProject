@@ -10,6 +10,7 @@ namespace ForumProject.Models.ViewModels
             Post = new Post();
             Likes = new List<Like>();
             Dislikes = new List<Dislike>();
+            PostComments = new List<Comment>();
         }
         
         public Post Post { get; set; }
@@ -17,6 +18,8 @@ namespace ForumProject.Models.ViewModels
         public List<Like> Likes { get; set; }
         
         public List<Dislike> Dislikes { get; set; }
+
+        public List<Comment> PostComments { get; set; }
 
         public bool ExistInReadingBook { get; set; }
     }
