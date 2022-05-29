@@ -1,0 +1,42 @@
+﻿@model KeyValuePair<(int, string), List<ForumProject.Models.AppDBContext.Comment>>
+
+@foreach (var obj in Model.Value)
+{
+    <div class="col-12 card mt-2" style="background-color: #0b0c10; padding-left: 100px; border: none; border-left: 2px">
+        <input type="text" hidden asp-for="@obj.Id">
+        <div class="card-body">
+            <div class="card-title mb-1" style="font-size: 20px; color: #66fcf1; font-weight: bold;">
+                <i class="fa-solid fa-circle-user"></i> &nbsp; @obj.User.UserName
+            </div>
+            <div class="card-subtitle mb-2" style="font-size: 20px; color: #66fcf1; font-weight: bold;">
+                <i class="fa-solid fa-calendar"></i> &nbsp; @obj.Date
+            </div>
+            <div class="card-text mb-2 mt-2 text-white pl-2">
+                @Html.Raw(obj.Text)
+            </div>
+            <div class="card-footer row">
+                <div class="col-2">
+                    <a class="btn btn-outline-warning button @obj.Id" onclick="showInput(@obj.Id)"> <i class="fa-solid fa-reply"></i> &nbsp; Reply</a>
+                </div>
+                @if (obj.UserId == Model.Key.Item2)
+                {
+                    ViewData["delete-comment"] = $"/Home/DeleteComment?id={obj.Id}&postId={Model.Key.Item1}";;
+                    <div class="col-2">
+                        <a href=@ViewData["delete-comment"] class="btn btn-outline-danger">
+                            <i class="fa-solid fa-trash-can"></i>  &nbsp; Delete
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="mt-2 reply @obj.Id" style="display: none">
+            <form method="post" asp-action="Comments" class="mt-5">
+                <textarea name="text" class="form-control summernote" style="background-color: white"></textarea>
+                <div class="col-2">
+                    <button type="submit" asp-action="Comments" asp-route-postId="@Model.Key.Item1" asp-route-parentId="@obj.Id" class="btn btn-success text-white form-control mb-3"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </form>
+        </div>
+        @await Component.InvokeAsync("ChildComment", new { id = obj.Id, postId = Model.Key.Item1, userId = Model.Key.Item2 });
+    </div>
+}

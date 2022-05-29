@@ -77,7 +77,7 @@ namespace ForumProject.Controllers
                 ExistInReadingBook = false,
                 Likes = _context.Likes.Where(el => el.PostId == id).ToList(),
                 Dislikes = _context.Dislikes.Where(el => el.PostId == id).ToList(),
-                PostComments = _context.Comments.Where(el => el.PostId == id).Include(el => el.User).Include(el => el.Post).OrderByDescending(el => el.Date).ToList(),
+                PostComments = _context.Comments.Where(el => el.PostId == id && el.ParentId == null).Include(el => el.User).Include(el => el.Post).OrderByDescending(el => el.Date).ToList(),
                 UserId = _context.IdentityUsers.FirstOrDefault(u => u.Id == claim.Value).Id
             };
             
