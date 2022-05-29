@@ -115,6 +115,9 @@ namespace ForumProject.Controllers
                     }
                     else
                         postVm.Post.Image = objFromDb.Image;
+
+                    postVm.Post.DateTime = objFromDb.DateTime;
+                    postVm.Post.UserId = objFromDb.UserId;
                     
                     _db.Posts.Update(postVm.Post);
                 }
