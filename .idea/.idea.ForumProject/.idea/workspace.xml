@@ -5,11 +5,11 @@
     <projectFile profileName="ForumProject">ForumProject.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed610e83-6764-4e7f-bebe-1d5db4898cd7" name="Changes" comment="">
+    <list default="true" id="ed610e83-6764-4e7f-bebe-1d5db4898cd7" name="Changes" comment="search added">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ForumProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ForumProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/ViewModels/DetailsVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ViewModels/DetailsVM.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Home/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Details.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.dll" afterDir="false" />
@@ -19,7 +19,6 @@
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Home/Details.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Home/Details.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/ForumProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/ForumProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/refint/ForumProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/refint/ForumProject.dll" afterDir="false" />
     </list>
@@ -35,6 +34,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Programming/ForumProject/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -133,7 +135,7 @@
       <workItem from="1653145222585" duration="6050000" />
       <workItem from="1653169446330" duration="3490000" />
       <workItem from="1653210070650" duration="7896000" />
-      <workItem from="1653818542877" duration="2273000" />
+      <workItem from="1653818542877" duration="5206000" />
     </task>
     <task id="LOCAL-00001" summary="Added ViewModel and used instead ViewBag">
       <created>1648573921629</created>
@@ -191,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652704074742</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="search added">
+      <created>1653821165822</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1653821165822</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +230,8 @@
     <MESSAGE value="roles access" />
     <MESSAGE value="style edits" />
     <MESSAGE value="changed saved page" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed saved page" />
+    <MESSAGE value="search added" />
+    <option name="LAST_COMMIT_MESSAGE" value="search added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

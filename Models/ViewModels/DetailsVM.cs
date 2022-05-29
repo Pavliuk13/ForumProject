@@ -13,6 +13,8 @@ namespace ForumProject.Models.ViewModels
             PostComments = new List<Comment>();
         }
         
+        public string UserId { get; set; }
+        
         public Post Post { get; set; }
 
         public List<Like> Likes { get; set; }

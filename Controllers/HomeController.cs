@@ -69,13 +69,16 @@ namespace ForumProject.Controllers
         [Authorize]
         public IActionResult Details(int id)
         {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
             DetailsVM detailsVm = new DetailsVM()
             {
                 Post = _context.Posts.Include(el => el.Category).Include(el => el.User).FirstOrDefault(el => el.Id == id),
                 ExistInReadingBook = false,
                 Likes = _context.Likes.Where(el => el.PostId == id).ToList(),
                 Dislikes = _context.Dislikes.Where(el => el.PostId == id).ToList(),
-                PostComments = _context.Comments.Where(el => el.PostId == id).Include(el => el.User).Include(el => el.Post).OrderByDescending(el => el.Date).ToList()
+                PostComments = _context.Comments.Where(el => el.PostId == id).Include(el => el.User).Include(el => el.Post).OrderByDescending(el => el.Date).ToList(),
+                UserId = _context.IdentityUsers.FirstOrDefault(u => u.Id == claim.Value).Id
             };
             
             List<ReadList> readList = new List<ReadList>();
@@ -133,6 +136,19 @@ namespace ForumProject.Controllers
             _context.SaveChanges();
             
             return RedirectToAction(nameof(Details), new {id = postId});
+        }
+        
+        [HttpGet]
+        public IActionResult DeleteComment(int id, int postId)
+        {
+            var obj = _context.Comments.Find(id);
+            if (obj != null)
+            {
+                _context.Comments.Remove(obj);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Details), new {id = postId});
+            }
+            return NotFound();
         }
         
         public IActionResult RemoveFromCart(int id)
