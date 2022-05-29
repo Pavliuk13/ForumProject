@@ -8,23 +8,18 @@
     <list default="true" id="ed610e83-6764-4e7f-bebe-1d5db4898cd7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ForumProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ForumProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/AppDBContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/AppDBContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/AppDBContext/AppDBContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/AppDBContext/AppDBContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/ViewModels/DetailsVM.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ViewModels/DetailsVM.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Home/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Details.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ForumProject.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.RazorCoreGenerate.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ForumProject.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Home/Details.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Home/Details.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Home/Privacy.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Home/Privacy.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/ForumProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/ForumProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/refint/ForumProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/refint/ForumProject.dll" afterDir="false" />
     </list>
@@ -137,7 +132,8 @@
       <workItem from="1653113518330" duration="7344000" />
       <workItem from="1653145222585" duration="6050000" />
       <workItem from="1653169446330" duration="3490000" />
-      <workItem from="1653210070650" duration="3559000" />
+      <workItem from="1653210070650" duration="7896000" />
+      <workItem from="1653818542877" duration="2273000" />
     </task>
     <task id="LOCAL-00001" summary="Added ViewModel and used instead ViewBag">
       <created>1648573921629</created>

@@ -26,11 +26,35 @@ namespace ForumProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string? keyWords)
         {
+            if (keyWords != null)
+                return SearchIndex(keyWords);
+            
             return View(new HomeVM()
             {
                 Posts = _context.Posts.Include(el => el.Category).Include(el => el.User),
+                Categories = _context.Categories
+            });
+        }
+        
+        [ActionName("Index")]
+        public IActionResult SearchIndex(string keyWords)
+        {
+            var words = keyWords.Split(' ');
+            List<Post> posts = new List<Post>();
+            foreach (var word in words)
+            {
+                var queryable = _context.Posts.Where(el => el.Theme.Contains(word)).Include(el => el.Category).Include(el => el.User);
+                if (queryable.Any())
+                {
+                    posts.AddRange(queryable.Where(el => !posts.Contains(el)));
+                }
+            }
+            
+            return View(new HomeVM()
+            {
+                Posts = posts,
                 Categories = _context.Categories
             });
         }
