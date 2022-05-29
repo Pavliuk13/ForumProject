@@ -119,7 +119,7 @@ namespace ForumProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult Comments(int postId, int? parentId,string text)
+        public IActionResult Comments(int postId, int? parentId, string text)
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
@@ -137,7 +137,7 @@ namespace ForumProject.Controllers
             
             return RedirectToAction(nameof(Details), new {id = postId});
         }
-        
+
         [HttpGet]
         public IActionResult DeleteComment(int id, int postId)
         {
