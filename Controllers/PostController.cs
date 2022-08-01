@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ForumProject.Controllers
 {
-    [Authorize(Roles = "SuperAdmin, Admin")]
+    [Authorize(Roles = "SuperAdmin, Admin, User")]
     public class PostController : Controller
     {
         private readonly AppDBContext _db;
@@ -123,7 +123,7 @@ namespace ForumProject.Controllers
                 }
                 _db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             postVm.CategorySelectList = _db.Categories.Select(item => new SelectListItem()

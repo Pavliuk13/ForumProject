@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using ForumProject.Models.AppDBContext;
 using ForumProject.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -8,11 +10,13 @@ namespace ForumProject.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly AppDBContext _context;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AccountController(AppDBContext db, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
+            _context = db;
             _userManager = userManager;
             _signInManager = signInManager;
         }
@@ -38,6 +42,15 @@ namespace ForumProject.Controllers
 
                 if (result.Succeeded)
                 {
+                    var registeredUser = await _userManager.FindByEmailAsync(user.Email);
+                    if (!_context.Users.Any())
+                    {
+                        await _userManager.AddToRoleAsync(registeredUser, "SuperAdmin");
+                    }
+                    else
+                    {
+                        await _userManager.AddToRoleAsync(registeredUser, "User");
+                    }
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }

@@ -42,9 +42,10 @@
                 {
                     <li><a class="nav-link px-2" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a class="nav-link px-2" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                    <li><a class="nav-link px-2" asp-area="" asp-controller="Post" asp-action="Upsert">Create post</a></li>
                 }
                 <li>
-                    @if (_contextAccessor.HttpContext.Session.Get<List<ReadList>>(WebConst.SessionReadList) != null)
+                    @if (_contextAccessor?.HttpContext?.Session.Get<List<ReadList>>(WebConst.SessionReadList) != null)
                     {
                         <a asp-action="Index" asp-controller="ReadList" class="nav-link px-2">
                             @{

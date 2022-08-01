@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\vasio\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\vasio\\.nuget\\packages"
+    ]
+  }
+}
